@@ -1,0 +1,73 @@
+Call Stack : 
+SayHello()
+SayBye()
+
+Hello Fn is added first in call stack and gets executed and after completion
+It adds the Bye Fn for execution
+
+One Fn execution needs to end, before we move to next line, and add next Fn to Stack
+
+SayHello(){
+ console.log('Hi');
+}
+
+On Hello Fn Invocation, Hello is added to stack and on top of that console.Log is added.
+It gets piled on top of each other, only if its called inside from Hello Fn.
+
+STACK as Data structure it follows LIFO
+The last fn/line which ever gets executed it is removed from the stack first
+
+--------------------
+
+function fun1(){
+  fun2()
+}
+
+function fun2(){
+fun3()
+}
+
+function fun3(){
+  //Nothing
+}
+
+fun1()
+
+in above eg.. fun1 is added and then fun2 and then fun3
+----------------------------
+
+
+setTimeout is a part of WebAPI
+
+Call Stack is manipulated by Web Api / Task Queue
+
+Task Queue is accessed by WebAPI's
+
+
+Any SetTimeout WebApi is pushed to Task Queue not to Call Stack directly
+
+Task Queue stores callbacks or jobs that comes back from async operations like timeout, network request, user event etc
+
+Queue operates in FIFO basis
+
+Event Loop : Is responsible for moving tasks from task queue to call stack
+Continuously checks and manages call stack by adding or removing tasks.
+When call stack is empty, it adds tasks from Synchronous Jobs and Micro Task Queue and than Task Queue. Since Synchronous has high priority than MicroTask Queue has higher Priority
+
+Order of Priority : Synchronous > MicroTask Queue > Task Queue
+
+SetTimeout even with 0 second delay is still an asynchronous call, which will be executed after all the synchronous call
+
+
+Micro task Queue : It is reserved for promises.It is similar to task queuq
+But instead of Callbacks, it stores Promise resolvers.
+It gets priority over task queue.
+
+-----------------------------------------
+
+CLOSURES
+
+
+
+
+
